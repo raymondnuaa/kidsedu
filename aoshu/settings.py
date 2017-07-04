@@ -14,6 +14,10 @@ BOT_NAME = 'aoshu'
 SPIDER_MODULES = ['aoshu.spiders']
 NEWSPIDER_MODULE = 'aoshu.spiders'
 
+REDIRECTS_ENABLED = False
+
+IMAGES_STORE = 'C:\\Users\\rlei\\Desktop\\Python\\kidsedu\\'
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'aoshu (+http://www.yourdomain.com)'
@@ -66,7 +70,10 @@ ROBOTSTXT_OBEY = False
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'aoshu.pipelines.AoshuPipeline': 300,
+    'aoshu.pipelines.MyImagesPipeline': 1
+    #'scrapy.pipelines.images.ImagesPipeline': 1
 }
+
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
