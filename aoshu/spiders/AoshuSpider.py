@@ -52,7 +52,12 @@ class AoshuspiderSpider(Spider):
         """
         # 带着headers、cookies去请求self.start_urls[0],返回的response会被送到
         # 回调函数parse中
-        baseUrl = 'http://www.aoshu.com/tk/asttl/ynj/'
+        #baseUrl = 'http://www.aoshu.com/tk/asttl/ynj/'
+        #baseUrl = 'http://www.aoshu.com/tk/asttl/enj/'
+        #baseUrl = 'http://www.aoshu.com/tk/asttl/snj/'
+        #baseUrl = 'http://www.aoshu.com/tk/asttl/sinj/'
+        #baseUrl = 'http://www.aoshu.com/tk/asttl/wnj/'
+        baseUrl = 'http://www.aoshu.com/tk/asttl/lnj/'
         for i in range(1, 13):
             monthUrl = baseUrl + str(i)
             yield Request(monthUrl, 
@@ -124,4 +129,5 @@ class AoshuspiderSpider(Spider):
         yield l.load_item() 
 
 
+        
         
